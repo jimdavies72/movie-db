@@ -1,0 +1,140 @@
+/* 
+-----
+Fonts
+-----
+font-family: 'Roboto', sans-serif;
+
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* 
+-------
+globals
+-------
+*/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --ff-primary: "Roboto", sans-serif;
+  --ff-display: "Digital-7 Mono", sans-serif;
+  --col-white: white;
+  --col-black: black;
+  --col-green: green;
+  --col-red: red;
+  --col-light-grey: #e7ebef;
+  --col-med-grey: #adb5bd;
+  --col-dar-grey: #687178;
+  --col-charcoal-grey: #41474e;
+  --col-med-blue: mediumblue;
+  --col-orange-red: orangered;
+  --col-med-orange: orange;
+  --col-light-seashell: #fff2eb;
+  --light-shadow: 4px 5px 5px 0px rgba(0, 0, 0, 0.51);
+  --dark-shadow: 22px 22px 15px -10px rgba(0, 0, 0, 0.66);
+  --inset-shadow: 4px 5px 6px -2px rgba(0, 0, 0, 0.75) inset;
+  --top-shadow: -2px -8px 17px -7px rgba(0, 0, 0, 0.4);
+  --text-shadow: 2px 2px 1px rgba(255, 255, 255, 1);
+  --transition-slow: 1s;
+  --transition-med: 0.75s;
+  --transition-fast: 0.5s;
+  --transition-vfast: 0.25s;
+}
+
+body {
+  font-family: var(--ff-primary);
+  background-color: var(--col-white);
+}
+
+/* 
+--------------
+Movie Database App
+--------------
+*/
+
+nav {
+  width: 100%;
+  height: 100px;
+  background-color: var(--col-light-grey);
+  box-shadow: var(--light-shadow);
+  overflow: none;
+}
+
+.container {
+  width: 75%;
+  margin: 50px auto;
+  padding: 30px 30px;
+
+  background-color: var(--col-med-grey);
+  box-shadow: var(--dark-shadow);
+  border-radius: 25px;
+}
+
+.card-container {
+  width: 90%;
+  margin: 20px Auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: var(--light-shadow);
+}
+
+#card-heading {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.overview {
+  width: 50%;
+  display: flex;
+  align-items: top;
+  flex-direction: row;
+  padding: 5px 0;
+}
+
+.overview h4 {
+  margin-left: 10px;
+}
+
+#poster {
+  height: 150px;
+}
+
+footer {
+  width: 100%;
+  height: 150px;
+  padding: 10px 10px;
+  background-color: darkblue;
+  box-shadow: var(--top-shadow);
+  overflow: none;
+}
+
+footer h3 {
+  color: var(--col-white);
+}
+
+/* 
+-------------
+Media Queries
+-------------
+*/
+
+@media screen and (max-width: 620px) {
+}
