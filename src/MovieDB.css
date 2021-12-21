@@ -63,20 +63,41 @@ Movie Database App
 --------------
 */
 
+FadeLoader {
+  align-content: center;
+}
+
 nav {
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 100px;
-  background-color: var(--col-light-grey);
+  background-color: var(--col-med-grey);
   box-shadow: var(--light-shadow);
   overflow: none;
+}
+
+nav h1 {
+  margin: 0 20px;
+  background-color: blue;
+  color: var(--col-white);
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 25px;
+  box-shadow: var(--light-shadow);
+  transition: 1s;
+}
+
+nav h1:hover {
+  cursor: pointer;
+  color: red;
 }
 
 .container {
   width: 75%;
   margin: 50px auto;
   padding: 30px 30px;
-
-  background-color: var(--col-med-grey);
+  background-color: var(--col-light-grey);
   box-shadow: var(--dark-shadow);
   border-radius: 25px;
 }
@@ -84,12 +105,12 @@ nav {
 .card-container {
   width: 90%;
   margin: 20px Auto;
-
+  background-color: var(--col-white);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid black;
+  border: 1px solid var(--col-black);
   border-radius: 25px;
   padding: 10px;
   box-shadow: var(--light-shadow);
@@ -99,22 +120,54 @@ nav {
   width: 50%;
   margin: 0 auto;
   text-align: center;
+  border: 1px solid var(--col-black);
+  border-radius: 10px;
+  box-shadow: var(--inset-shadow);
+}
+
+.movie-detail {
+  margin-top: 10px;
+  background-color: var(--col-dar-grey);
+  border-radius: 15px;
+  border: 1px solid var(--col-black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  box-shadow: var(--light-shadow);
 }
 
 .overview {
-  width: 50%;
+  background-color: var(--col-light-grey);
+  border-radius: 15px;
+  width: 48%;
   display: flex;
   align-items: top;
   flex-direction: row;
-  padding: 5px 0;
+  padding: 10px;
 }
 
 .overview h4 {
-  margin-left: 10px;
+  margin: 0 10px;
+  font-size: 1.1rem;
+  color: var(--col-green);
 }
 
 #poster {
-  height: 150px;
+  height: 200px;
+  border: 1px solid var(--col-black);
+  border-radius: 10px;
+  box-shadow: var(--light-shadow);
+}
+
+.film-data {
+  color: var(--col-white);
+  font-size: 1.3rem;
+  width: 48%;
+  display: flex;
+  align-items: top;
+  flex-direction: column;
+  padding: 10px;
 }
 
 footer {
