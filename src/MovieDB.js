@@ -35,7 +35,8 @@ const MovieDB = () => {
     // react spinner
     return (
       <div className="spinner">
-        <FadeLoader loading={true} color={"#0c9726"} />;<h3>Loading...</h3>
+        <FadeLoader loading={true} color={"#0c9726"} />
+        <h3>Loading...</h3>
       </div>
     );
   } else {
