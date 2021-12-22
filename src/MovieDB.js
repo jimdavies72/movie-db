@@ -5,21 +5,17 @@ import MovieCard from "./components/MovieCard";
 
 const MovieDB = () => {
   const [movieData, setMovieData] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [returnType, setReturnType] = useState(0);
+  const [loading, setLoading] = useState(false);
   const [searchText, setSearchText] = useState("");
 
   const posterSlug = "https://image.tmdb.org/t/p/original";
 
-  const apiReturnType = ["popular", "search"];
-
   useEffect(() => {
-    handleFetch();
+    handleFetch("popular");
   }, []);
 
   const clickHandler = () => {
-    setReturnType(1);
-    handleFetch();
+    handleFetch("search");
   };
 
   const inputTextHandler = (event) => {
@@ -27,25 +23,30 @@ const MovieDB = () => {
   };
 
   // get movie data from endpoint
-  const handleFetch = async () => {
-    console.log(apiReturnType[returnType]);
+  const handleFetch = async (returnType) => {
     let fetchString = "";
-    if (apiReturnType[returnType] === "search") {
+    if (returnType === "search") {
+      //setLoading(true);
       fetchString = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-UK&query=${searchText}&page=1&include_adult=false`;
+
+      setSearchText("");
     } else {
       //display popular
       fetchString = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_API_KEY}`;
     }
 
     const response = await fetch(fetchString);
-    //console.log(fetchString);
+    //console.log(response);
 
+    //TODO: Return a message when no data is returned.
     const data = await response.json();
     //console.log(data);
     setMovieData(data);
-    setLoading(!loading);
+
+    //setLoading(!loading);
   };
 
+  //TODO: Get the spinner (state) working.
   if (loading) {
     // react spinner
     return (
