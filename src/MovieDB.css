@@ -30,6 +30,7 @@ html {
   --ff-primary: "Roboto", sans-serif;
   --ff-display: "Digital-7 Mono", sans-serif;
   --col-white: white;
+  --col-off-white: #faf9f6;
   --col-black: black;
   --col-green: green;
   --col-red: red;
@@ -63,8 +64,9 @@ Movie Database App
 --------------
 */
 
-FadeLoader {
-  align-content: center;
+.spinner {
+  display: flex;
+  flex-direction: column;
 }
 
 nav {
@@ -94,8 +96,8 @@ nav h1:hover {
 }
 
 .container {
-  width: 75%;
-  margin: 50px auto;
+  width: 98%;
+  margin: 20px auto;
   padding: 30px 30px;
   background-color: var(--col-light-grey);
   box-shadow: var(--dark-shadow);
@@ -103,71 +105,75 @@ nav h1:hover {
 }
 
 .card-container {
-  width: 90%;
-  margin: 20px Auto;
-  background-color: var(--col-white);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid var(--col-black);
-  border-radius: 25px;
+  width: 90%;
+  margin: 20px Auto;
+  background-color: var(--col-off-white);
+  border-radius: 2px;
   padding: 10px;
   box-shadow: var(--light-shadow);
 }
 
 #card-heading {
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
   text-align: center;
+  background-color: var(--col-white);
   border: 1px solid var(--col-black);
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: var(--inset-shadow);
 }
 
 .movie-detail {
   margin-top: 10px;
-  background-color: var(--col-dar-grey);
-  border-radius: 15px;
-  border: 1px solid var(--col-black);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-around;
+  align-items: top;
   flex-direction: row;
+}
+
+.section {
+  width: 31%;
+  background-color: var(--col-white);
+}
+
+.poster-img {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 2px;
+  padding: 10px;
   box-shadow: var(--light-shadow);
 }
 
-.overview {
-  background-color: var(--col-light-grey);
-  border-radius: 15px;
-  width: 48%;
-  display: flex;
-  align-items: top;
-  flex-direction: row;
-  padding: 10px;
-}
-
-.overview h4 {
-  margin: 0 10px;
-  font-size: 1.1rem;
-  color: var(--col-green);
-}
-
 #poster {
-  height: 200px;
+  height: 250px;
   border: 1px solid var(--col-black);
   border-radius: 10px;
   box-shadow: var(--light-shadow);
 }
 
-.film-data {
-  color: var(--col-white);
-  font-size: 1.3rem;
-  width: 48%;
-  display: flex;
-  align-items: top;
-  flex-direction: column;
+.overview {
+  border-radius: 2px;
   padding: 10px;
+  box-shadow: var(--light-shadow);
+}
+
+.film-data {
+  border-radius: 2px;
+  padding: 10px;
+  box-shadow: var(--light-shadow);
+}
+
+ul {
+  list-style-type: none;
+}
+
+li:not(:last-child) {
+  margin-bottom: 5px;
 }
 
 footer {
@@ -189,5 +195,31 @@ Media Queries
 -------------
 */
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 680px) {
+  nav footer {
+    margin: 0 1%;
+  }
+
+  h3,
+  h2,
+  h1 {
+    font-size: 0.8em;
+  }
+
+  #card-heading {
+    width: 90%;
+  }
+  .movie-detail {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .section {
+    width: 90%;
+    margin-bottom: 7px;
+  }
+
+  #poster {
+    height: 125px;
+  }
 }

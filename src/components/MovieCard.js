@@ -5,18 +5,21 @@ const MovieCard = (props) => {
         <h2 id="card-heading">{props.movieTitle} </h2>
 
         <div className="movie-detail">
-          <div className="overview">
+          <div className="section poster-img">
             <img id="poster" src={props.posterSrc} alt={props.movieTitle} />
-            <h4>{props.overview}</h4>
           </div>
-          <div className="film-data">
-            <h4>Rank: {props.key}</h4>
-            <h4>Adult film? - {props.adult}</h4>
-            <h4>Language: {props.language}</h4>
-            <h4>Popularity: {props.popularity}</h4>
-            <h4>
-              Score: {props.voteScore}/10 ({props.voteCount} votes counted)
-            </h4>
+          <div className="section overview">
+            <h3>{props.overview}</h3>
+          </div>
+          <div className="section film-data">
+            <ul>
+              <li>Adult film? - {props.adult}</li>
+              <li>Language: {props.language}</li>
+              <li>Popularity: {props.popularity}</li>
+              <li>
+                Score: {props.voteScore}/10 ({props.voteCount} votes counted)
+              </li>
+            </ul>
           </div>
         </div>
       </div>

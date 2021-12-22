@@ -33,7 +33,11 @@ const MovieDB = () => {
 
   if (loading) {
     // react spinner
-    return <FadeLoader />;
+    return (
+      <div className="spinner">
+        <FadeLoader loading={true} color={"#0c9726"} />;<h3>Loading...</h3>
+      </div>
+    );
   } else {
     // render the data
     return (
@@ -46,7 +50,7 @@ const MovieDB = () => {
             movieData.results.map((movie, index) => {
               return (
                 <MovieCard
-                  key={index}
+                  index={index}
                   adult={movie.adult}
                   movieTitle={movie.original_title}
                   language={movie.original_language}
