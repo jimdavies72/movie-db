@@ -6,7 +6,6 @@ import MovieCard from "./components/MovieCard";
 const MovieDB = () => {
   const [movieData, setMovieData] = useState({});
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
 
   const posterSlug = "https://image.tmdb.org/t/p/original";
 
@@ -16,19 +15,15 @@ const MovieDB = () => {
 
   // get movie data from endpoint
   const handleFetch = async () => {
-    try {
-      const fetchString = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_API_KEY}`;
+    const fetchString = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_API_KEY}`;
 
-      const response = await fetch(fetchString);
-      console.log(response);
+    const response = await fetch(fetchString);
+    //console.log(response);
 
-      const data = await response.json();
-      //console.log(data);
-      setMovieData(data);
-      setLoading(!loading);
-    } catch (error) {
-      setError(true);
-    }
+    const data = await response.json();
+    //console.log(data);
+    setMovieData(data);
+    setLoading(!loading);
   };
 
   if (loading) {
@@ -51,7 +46,7 @@ const MovieDB = () => {
             movieData.results.map((movie, index) => {
               return (
                 <MovieCard
-                  index={index}
+                  key={index}
                   adult={movie.adult}
                   movieTitle={movie.original_title}
                   language={movie.original_language}

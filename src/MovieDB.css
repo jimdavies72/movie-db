@@ -154,6 +154,7 @@ nav h1:hover {
 }
 
 .section {
+  margin: 0 auto;
   width: 31%;
   background-color: var(--col-white);
 }
