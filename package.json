@@ -1,7 +1,7 @@
 {
   "homepage": "https://jimdavies72.github.io/movie-db/",
   "name": "movie-db",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
