@@ -11,10 +11,12 @@ const MovieDB = () => {
   const posterSlug = "https://image.tmdb.org/t/p/original";
 
   useEffect(() => {
+    setLoading(true);
     handleFetch("popular");
   }, []);
 
   const clickHandler = () => {
+    setLoading(true);
     handleFetch("search");
   };
 
@@ -22,7 +24,7 @@ const MovieDB = () => {
     setSearchText(event.target.value);
   };
 
-  // get movie data from endpoint
+  // get movie data from endpoint using appropriate URI
   const handleFetch = async (returnType) => {
     let fetchString = "";
     if (returnType === "search") {
@@ -36,17 +38,16 @@ const MovieDB = () => {
     }
 
     const response = await fetch(fetchString);
-    //console.log(response);
-
-    //TODO: Return a message when no data is returned.
     const data = await response.json();
-    //console.log(data);
-    setMovieData(data);
 
-    //setLoading(!loading);
+    if (data.results.length === 0) {
+      window.alert("Sorry, your search returned no matches");
+    } else {
+      setMovieData(data);
+    }
+    setLoading(false);
   };
 
-  //TODO: Get the spinner (state) working.
   if (loading) {
     // react spinner
     return (
@@ -91,7 +92,10 @@ const MovieDB = () => {
             })}
         </div>
         <footer>
-          <h3>&copy; Copyright jimdavies72 2021</h3>
+          <h3>
+            &copy; Copyright James Davies (jimdavies72){" "}
+            {new Date().getFullYear()}
+          </h3>
         </footer>
       </>
     );
